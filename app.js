@@ -11,6 +11,8 @@ hbs.registerHelper('getTime', () => {
     return new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds() + ' ' + new Date().toString()
 })
 
+var port = process.env.PORT || 5000
+
 app.get('/', (req, res) => {
     res.render('home', {
         titlepage: 'Home'
@@ -29,6 +31,6 @@ app.get('/blog', (req, res) => {
     })
 })
 
-app.listen(5000, () => {
-    console.log('you are listining at port 5000')
+app.listen(port, () => {
+    console.log(`You are listinig at port ${port}`)
 })
